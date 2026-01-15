@@ -1,0 +1,80 @@
+<header>
+  <h1>Shoe Trend Tracker</h1>
+  <nav>
+    <button id="allShoesBtn">All Shoes</button>
+    <button id="watchlistBtn">Watchlist</button>
+    <button id="inventoryViewBtn">Inventory</button>
+  </nav>
+</header>
+
+<main>
+  <!-- Filters (only for all/watchlist views) -->
+  <section id="filters">
+    <select id="brandFilter">
+      <option value="">All Brands</option>
+      <option value="Nike">Nike</option>
+      <option value="Jordan">Jordan</option>
+      <option value="Adidas">Adidas</option>
+      <option value="New Balance">New Balance</option>
+    </select>
+  </section>
+
+  <!-- Shoe list (all + watchlist use this) -->
+  <section id="shoeList"></section>
+
+  <!-- Shoe detail -->
+  <section id="shoeDetail" class="hidden">
+    <button id="backBtn">← Back</button>
+    <div id="shoeDetailContent"></div>
+  </section>
+
+  <!-- Inventory view -->
+  <section id="inventorySection" class="hidden">
+    <h2>Your Inventory & Targets</h2>
+
+    <form id="inventoryForm">
+      <h3>Add a Shoe</h3>
+      <div class="form-row">
+        <label>
+          Name
+          <input type="text" id="invName" required placeholder="Jordan 1 Lost & Found" />
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>
+          Brand
+          <input type="text" id="invBrand" required placeholder="Jordan" />
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>
+          Size
+          <input type="text" id="invSize" placeholder="12" />
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>
+          Price (what you paid or target)
+          <input type="number" id="invPrice" step="0.01" placeholder="200" />
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>
+          Status
+          <select id="invStatus">
+            <option value="owned">Owned</option>
+            <option value="target">Want to Buy</option>
+          </select>
+        </label>
+      </div>
+
+      <button type="submit">Add to Inventory</button>
+    </form>
+
+    <div id="inventoryList"></div>
+  </section>
+</main>
